@@ -259,6 +259,7 @@ jobs:
           UV_HTTP_RETRIES: 5
         run: |
           cargo nextest run \
+            --cargo-profile fast-build \
             --features python-patch,native-auth,secret-service \
             --workspace \
             --status-level skip --failure-output immediate-final --no-fail-fast -j 20 --final-status-level slow
@@ -300,6 +301,7 @@ jobs:
           UV_HTTP_RETRIES: 5
         run: |
           cargo nextest run \
+            --cargo-profile fast-build \
             --no-default-features \
             --features python,python-managed,pypi,git,performance,crates-io,native-auth,apple-native \
             --workspace \
@@ -355,6 +357,7 @@ jobs:
         shell: bash
         run: |
           cargo nextest run \
+            --cargo-profile fast-build \
             --no-default-features \
             --features python,pypi,python-managed,native-auth,windows-native \
             --workspace \
